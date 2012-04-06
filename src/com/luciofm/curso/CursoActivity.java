@@ -15,6 +15,7 @@ public class CursoActivity extends Activity {
 	private Button httpB;
 	private Button httpC;
 	private Button httpD;
+	private Button webServiceA;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class CursoActivity extends Activity {
         httpB = (Button) findViewById(R.id.buttonHttpB);
         httpC = (Button) findViewById(R.id.buttonHttpC);
         httpD = (Button) findViewById(R.id.buttonHttpD);
+        webServiceA = (Button) findViewById(R.id.webServiceA);
 
         listViewActivityA.setOnClickListener(buttonClickListener);
         listViewActivityB.setOnClickListener(buttonClickListener);
@@ -34,6 +36,7 @@ public class CursoActivity extends Activity {
         httpB.setOnClickListener(buttonClickListener);
         httpC.setOnClickListener(buttonClickListener);
         httpD.setOnClickListener(buttonClickListener);
+        webServiceA.setOnClickListener(buttonClickListener);
     }
 
     OnClickListener buttonClickListener = new OnClickListener() {
@@ -52,6 +55,8 @@ public class CursoActivity extends Activity {
 				intent = new Intent(CursoActivity.this, HttpRequestActivityC.class);
 			if (v == httpD)
 				intent = new Intent(CursoActivity.this, HttpRequestActivityD.class);
+			if (v == webServiceA)
+				intent = new Intent(CursoActivity.this, WebServiceJsonActivity.class);
 
 			startActivity(intent);
 		}

@@ -25,6 +25,7 @@
         <activity android:name=".HttpRequestActivityB"></activity>
         <activity android:name=".HttpRequestActivityC"></activity>
         <activity android:name=".HttpRequestActivityD"></activity>
+        <activity android:name=".WebServiceJsonActivity"></activity>
     </application>
 
 </manifest>
