@@ -28,7 +28,7 @@ public class HttpRequestActivityD extends Activity {
 		setContentView(R.layout.web_response_text);
 
 		textView = (TextView) findViewById(R.id.text);
-		String url = "http://api.noitehoje.com.br/api/v1/crEjew8r/getevents?location=Porto%20Alegre&page=1";
+		String url = "http://api.twitter.com/1/statuses/public_timeline.json";
 		httpRequest.execute(url);
 	}
 
