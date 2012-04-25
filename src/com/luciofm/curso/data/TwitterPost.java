@@ -1,4 +1,4 @@
-package com.luciofm.curso;
+package com.luciofm.curso.data;
 
 public class TwitterPost {
 	String user;

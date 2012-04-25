@@ -15,6 +15,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.luciofm.curso.data.TwitterPost;
+
 import android.app.Activity;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
@@ -28,7 +30,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class WebServiceJsonActivity extends ListActivity {
+public class WebServiceJsonActivityA extends ListActivity {
 	TextView textView;
 	ProgressDialog progress;
 	TwitterAdapter adapter;
@@ -82,14 +84,14 @@ public class WebServiceJsonActivity extends ListActivity {
 
 		@Override
 		protected void onPreExecute() {
-			progress = ProgressDialog.show(WebServiceJsonActivity.this, "Curso", "Carregando...");
+			progress = ProgressDialog.show(WebServiceJsonActivityA.this, "Curso", "Carregando...");
 		}
 
 		@Override
 		protected void onPostExecute(List<TwitterPost> result) {
 			progress.dismiss();
 
-			adapter = new TwitterAdapter(WebServiceJsonActivity.this, android.R.id.text1, result);
+			adapter = new TwitterAdapter(WebServiceJsonActivityA.this, android.R.id.text1, result);
 			getListView().setAdapter(adapter);
 		}
 
@@ -102,7 +104,7 @@ public class WebServiceJsonActivity extends ListActivity {
 		public TwitterAdapter(Context context, int textViewResourceId,
 				List<TwitterPost> objects) {
 			super(context, textViewResourceId, objects);
-			inflater = LayoutInflater.from(WebServiceJsonActivity.this);
+			inflater = LayoutInflater.from(WebServiceJsonActivityA.this);
 		}
 
 		@Override
