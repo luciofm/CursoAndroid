@@ -19,6 +19,8 @@ public class CursoActivity extends Activity {
 			"IntentActivityA",
 			"IntentActivityB",
 			"IntentActivityC",
+			"BackActivity",
+			"IntentPhotoActivity",
 			"ListViewActivityA",
 			"ListViewActivityB",
 			"HttpRequestActivityA",
