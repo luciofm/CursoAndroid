@@ -32,6 +32,8 @@
         </activity>
         <activity android:name=".ListViewActivityB" >
         </activity>
+        <activity android:name=".UrlConnectionActivityA" >
+        </activity>
         <activity android:name=".HttpRequestActivityA" >
         </activity>
         <activity android:name=".HttpRequestActivityB" >
