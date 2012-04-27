@@ -28,6 +28,12 @@
         </activity>
         <activity android:name=".ResponseActivity" >
         </activity>
+        <activity android:name=".BackActivity" >
+        </activity>
+        <activity android:name=".BackPressedActivity" >
+        </activity>
+        <activity android:name=".IntentPhotoActivity" >
+        </activity>
         <activity android:name=".ListViewActivityA" >
         </activity>
         <activity android:name=".ListViewActivityB" >
