@@ -63,6 +63,8 @@
         </activity>
         <activity android:name=".PermissionActivityA" >
         </activity>
+        <activity android:name=".ResourcesActivity" >
+        </activity>
     </application>
 
 </manifest>

@@ -12,6 +12,7 @@ public class CursoActivity extends Activity {
 
 	String[] activities = {
 			"PermissionActivityA",
+			"ResourcesActivity",
 			"FrameLayoutActivity",
 			"RelativeLayoutActivity",
 			"LinearLayoutActivityA",
