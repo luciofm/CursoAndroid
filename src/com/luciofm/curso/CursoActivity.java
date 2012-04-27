@@ -23,6 +23,7 @@ public class CursoActivity extends Activity {
 			"IntentPhotoActivity",
 			"ListViewActivityA",
 			"ListViewActivityB",
+			"UrlConnectionActivityA",
 			"HttpRequestActivityA",
 			"HttpRequestActivityB",
 			"HttpRequestActivityC",
@@ -31,24 +32,25 @@ public class CursoActivity extends Activity {
 			"WebServiceJsonActivityB"
 	};
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
 
-        LinearLayout container = (LinearLayout) findViewById(R.id.buttons_container);
-        for (final String activity : activities) {
-        	Button btn = new Button(this);
-        	btn.setText(activity);
-        	btn.setOnClickListener(new OnClickListener() {
-				
+		LinearLayout container = (LinearLayout) findViewById(R.id.buttons_container);
+		for (final String activity : activities) {
+			Button btn = new Button(this);
+			btn.setText(activity);
+			btn.setOnClickListener(new OnClickListener() {
+
 				public void onClick(View v) {
 					Intent intent = new Intent();
-					intent.setClassName(getPackageName(), getPackageName() + "." + activity);
+					intent.setClassName(getPackageName(), getPackageName()
+							+ "." + activity);
 					startActivity(intent);
 				}
 			});
-        	container.addView(btn);
-        }
-    }
+			container.addView(btn);
+		}
+	}
 }
