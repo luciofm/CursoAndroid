@@ -7,6 +7,7 @@
     <uses-sdk android:minSdkVersion="7" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+<!--     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -52,13 +53,15 @@
         </activity>
         <activity android:name=".WebServiceJsonActivityB" >
         </activity>
-        <activity android:name="LinearLayoutActivityA" >
+        <activity android:name=".LinearLayoutActivityA" >
         </activity>
-        <activity android:name="LinearLayoutActivityB" >
+        <activity android:name=".LinearLayoutActivityB" >
         </activity>
-        <activity android:name="FrameLayoutActivity" >
+        <activity android:name=".FrameLayoutActivity" >
         </activity>
-        <activity android:name="RelativeLayoutActivity" >
+        <activity android:name=".RelativeLayoutActivity" >
+        </activity>
+        <activity android:name=".PermissionActivityA" >
         </activity>
     </application>
 

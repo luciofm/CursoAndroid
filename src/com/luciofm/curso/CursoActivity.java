@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 public class CursoActivity extends Activity {
 
 	String[] activities = {
+			"PermissionActivityA",
 			"FrameLayoutActivity",
 			"RelativeLayoutActivity",
 			"LinearLayoutActivityA",
