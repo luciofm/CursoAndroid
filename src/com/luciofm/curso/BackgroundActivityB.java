@@ -14,18 +14,22 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class HttpRequestActivityB extends Activity {
+public class BackgroundActivityB extends Activity {
 
 	TextView textView;
+	ProgressBar progress;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.web_response_text);
+		setContentView(R.layout.web_response_text_progress);
 
 		textView = (TextView) findViewById(R.id.text);
+		progress = (ProgressBar) findViewById(R.id.progressBar);
 		String url = "http://api.twitter.com/1/statuses/public_timeline.json";
 		httpRequest.execute(url);
 	}
@@ -68,6 +72,7 @@ public class HttpRequestActivityB extends Activity {
 				textView.setText(Html.fromHtml(result));
 			else
 				textView.setText("Erro carregando dados");
+			progress.setVisibility(View.GONE);
 		}
 
 	};

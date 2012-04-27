@@ -42,11 +42,11 @@
         </activity>
         <activity android:name=".HttpRequestActivityA" >
         </activity>
-        <activity android:name=".HttpRequestActivityB" >
+        <activity android:name=".BackgroundActivityA" >
         </activity>
-        <activity android:name=".HttpRequestActivityC" >
+        <activity android:name=".BackgroundActivityB" >
         </activity>
-        <activity android:name=".HttpRequestActivityD" >
+        <activity android:name=".BackgroundActivityC" >
         </activity>
         <activity android:name=".WebServiceJsonActivityA" >
         </activity>

@@ -17,7 +17,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.widget.TextView;
 
-public class HttpRequestActivityD extends Activity {
+public class BackgroundActivityC extends Activity {
 
 	TextView textView;
 	ProgressDialog progress;
@@ -66,7 +66,7 @@ public class HttpRequestActivityD extends Activity {
 
 		@Override
 		protected void onPreExecute() {
-			progress = ProgressDialog.show(HttpRequestActivityD.this, "Curso", "Carregando...");
+			progress = ProgressDialog.show(BackgroundActivityC.this, "Curso", "Carregando...");
 		}
 
 		@Override

@@ -2,7 +2,6 @@ package com.luciofm.curso;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -25,9 +24,9 @@ public class CursoActivity extends Activity {
 			"ListViewActivityB",
 			"UrlConnectionActivityA",
 			"HttpRequestActivityA",
-			"HttpRequestActivityB",
-			"HttpRequestActivityC",
-			"HttpRequestActivityD",
+			"BackgroundActivityA",
+			"BackgroundActivityB",
+			"BackgroundActivityC",
 			"WebServiceJsonActivityA",
 			"WebServiceJsonActivityB"
 	};

@@ -11,27 +11,22 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
 import android.app.Activity;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Html;
-import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class HttpRequestActivityC extends Activity {
+public class BackgroundActivityA extends Activity {
 
 	TextView textView;
-	ProgressBar progress;
+	String url;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.web_response_text_progress);
+		setContentView(R.layout.web_response_text);
 
 		textView = (TextView) findViewById(R.id.text);
-		progress = (ProgressBar) findViewById(R.id.progressBar);
-		String url = "http://api.twitter.com/1/statuses/public_timeline.json";
-		httpRequest.execute(url);
+		url = "http://api.twitter.com/1/statuses/public_timeline.json";
+		new Thread(runnable).start();
 	}
 
 	public static String getHttpRequest(String urlAddress)
@@ -44,15 +39,17 @@ public class HttpRequestActivityC extends Activity {
 		return entity;
 	}
 
-	AsyncTask<String, Void, String> httpRequest = new AsyncTask<String, Void, String>() {
-
-		@Override
-		protected String doInBackground(String... params) {
-			String url = params[0];
-
-			
+	Runnable runnable = new Runnable() {
+		
+		public void run() {
 			try {
-				return getHttpRequest(url);
+				final String response = getHttpRequest(url);
+				BackgroundActivityA.this.runOnUiThread(new Runnable() {
+					
+					public void run() {
+						textView.setText(response);
+					}
+				});
 			} catch (ClientProtocolException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -63,17 +60,6 @@ public class HttpRequestActivityC extends Activity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			return null;
 		}
-
-		@Override
-		protected void onPostExecute(String result) {
-			if (result != null)
-				textView.setText(Html.fromHtml(result));
-			else
-				textView.setText("Erro carregando dados");
-			progress.setVisibility(View.GONE);
-		}
-
 	};
 }

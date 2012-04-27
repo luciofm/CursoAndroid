@@ -14,21 +14,20 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 
-import com.luciofm.curso.data.TwitterPost;
-
-import android.app.Activity;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.luciofm.curso.data.TwitterPost;
 
 public class WebServiceJsonActivityA extends ListActivity {
 	TextView textView;
@@ -68,7 +67,7 @@ public class WebServiceJsonActivityA extends ListActivity {
 			}
 			ArrayList<TwitterPost> posts = new ArrayList<TwitterPost>();
 			try {
-				JSONArray array = new JSONArray(response);
+				JSONArray array = (JSONArray) new JSONTokener(response).nextValue();
 				for (int i = 0; i < array.length(); i++) {
 					JSONObject tweet = array.getJSONObject(i);
 					JSONObject user = tweet.getJSONObject("user");
