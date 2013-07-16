@@ -30,7 +30,7 @@ public class BackgroundActivityB extends Activity {
 
 		textView = (TextView) findViewById(R.id.text);
 		progress = (ProgressBar) findViewById(R.id.progressBar);
-		String url = "http://api.twitter.com/1/statuses/public_timeline.json";
+		String url = "https://api.github.com/gists/public";
 		httpRequest.execute(url);
 	}
 

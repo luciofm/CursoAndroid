@@ -25,7 +25,7 @@ public class BackgroundActivityA extends Activity {
 		setContentView(R.layout.web_response_text);
 
 		textView = (TextView) findViewById(R.id.text);
-		url = "http://api.twitter.com/1/statuses/public_timeline.json";
+		url = "https://api.github.com/gists/public";
 		new Thread(runnable).start();
 	}
 

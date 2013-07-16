@@ -24,7 +24,7 @@ public class UrlConnectionActivityA extends Activity {
 		setContentView(R.layout.web_response_text);
 
 		textView = (TextView) findViewById(R.id.text);
-		String url = "http://api.twitter.com/1/statuses/public_timeline.json";
+		String url = "https://api.github.com/gists/public";
 		try {
 			String response = getHttpRequest(url);
 			textView.setText(Html.fromHtml(response));

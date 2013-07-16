@@ -9,12 +9,12 @@ public class ListViewActivityA extends Activity {
 
 	private ListView list;
 
-	private String[] capitais = { "Rio Branco", "Macei√≥", "Macap√°", "Manaus",
-			"Salvador", "Fortaleza", "Bras√≠lia", "Vit√≥ria", "Goi√¢nia",
-			"S√£o Luis", "Cuiab√°", "Campo Grande", "Belo Horizonte", "Bel√©m",
-			"Jo√£o Pessoa", "Curitiba", "Recife", "Teresina", "Rio de Janeiro",
+	private String[] capitais = { "Rio Branco", "Maceió", "Macapá", "Manaus",
+			"Salvador", "Fortaleza", "Brasília", "Vitória", "Goiânia",
+			"São Luis", "Cuiabá", "Campo Grande", "Belo Horizonte", "Belém",
+			"João Pessoa", "Curitiba", "Recife", "Teresina", "Rio de Janeiro",
 			"Natal", "Porto Alegre", "Porto Velho", "Boa Vista",
-			"Florian√≥polis", "S√£o Paulo", "Aracaj√∫", "Palmas" };
+			"Florianópolis", "São Paulo", "Aracajú", "Palmas" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

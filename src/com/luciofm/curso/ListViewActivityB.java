@@ -22,7 +22,7 @@ public class ListViewActivityB extends Activity {
 
 		// prepare the list of all records
 		List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 20; i++) {
 			HashMap<String, String> map = new HashMap<String, String>();
 			map.put("rowid", "" + i);
 			map.put("col_1", "col_1_item_" + i);

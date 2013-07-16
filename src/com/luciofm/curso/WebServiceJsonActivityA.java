@@ -27,18 +27,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.luciofm.curso.data.TwitterPost;
+import com.luciofm.curso.data.Gist;
+import com.luciofm.curso.data.GitUser;
 
 public class WebServiceJsonActivityA extends ListActivity {
 	TextView textView;
 	ProgressDialog progress;
-	TwitterAdapter adapter;
+	GistAdapter adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		String url = "http://api.twitter.com/1/statuses/public_timeline.json";
+		String url = "https://api.github.com/gists/public";
 		httpRequest.execute(url);
 	}
 
@@ -52,10 +53,10 @@ public class WebServiceJsonActivityA extends ListActivity {
 		return entity;
 	}
 	
-	AsyncTask<String, Void, List<TwitterPost>> httpRequest = new AsyncTask<String, Void, List<TwitterPost>>() {
+	AsyncTask<String, Void, List<Gist>> httpRequest = new AsyncTask<String, Void, List<Gist>>() {
 
 		@Override
-		protected List<TwitterPost> doInBackground(String... params) {
+		protected List<Gist> doInBackground(String... params) {
 			String url = params[0];
 			String response;
 			
@@ -65,20 +66,26 @@ public class WebServiceJsonActivityA extends ListActivity {
 				e.printStackTrace();
 				return null;
 			}
-			ArrayList<TwitterPost> posts = new ArrayList<TwitterPost>();
+			ArrayList<Gist> gists = new ArrayList<Gist>();
 			try {
 				JSONArray array = (JSONArray) new JSONTokener(response).nextValue();
 				for (int i = 0; i < array.length(); i++) {
-					JSONObject tweet = array.getJSONObject(i);
-					JSONObject user = tweet.getJSONObject("user");
-					posts.add(new TwitterPost(user.getString("screen_name"), tweet.getString("text")));
+					JSONObject gist = array.getJSONObject(i);
+					JSONObject u = gist.getJSONObject("user");
+					GitUser user = new GitUser();
+					user.setLogin(u.getString("login"));
+					user.setHtml_url(u.getString("html_url"));
+					Gist g = new Gist();
+					g.setUser(user);
+					g.setDescription(gist.getString("description"));
+					gists.add(g);
 				}
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				return null;
 			}
-			return posts;
+			return gists;
 		}
 
 		@Override
@@ -87,21 +94,21 @@ public class WebServiceJsonActivityA extends ListActivity {
 		}
 
 		@Override
-		protected void onPostExecute(List<TwitterPost> result) {
+		protected void onPostExecute(List<Gist> result) {
 			progress.dismiss();
 
-			adapter = new TwitterAdapter(WebServiceJsonActivityA.this, android.R.id.text1, result);
+			adapter = new GistAdapter(WebServiceJsonActivityA.this, android.R.id.text1, result);
 			getListView().setAdapter(adapter);
 		}
 
 	};
 
-	public class TwitterAdapter extends ArrayAdapter<TwitterPost> {
+	public class GistAdapter extends ArrayAdapter<Gist> {
 
 		LayoutInflater inflater;
 
-		public TwitterAdapter(Context context, int textViewResourceId,
-				List<TwitterPost> objects) {
+		public GistAdapter(Context context, int textViewResourceId,
+				List<Gist> objects) {
 			super(context, textViewResourceId, objects);
 			inflater = LayoutInflater.from(WebServiceJsonActivityA.this);
 		}
@@ -113,12 +120,12 @@ public class WebServiceJsonActivityA extends ListActivity {
 			if (v == null)
 				v = inflater.inflate(android.R.layout.simple_list_item_2, parent, false);
 
-			TwitterPost post = getItem(position);
+			Gist gist = getItem(position);
 			TextView text1 = (TextView) v.findViewById(android.R.id.text1);
 			TextView text2 = (TextView) v.findViewById(android.R.id.text2);
 
-			text1.setText(post.getUser());
-			text2.setText(post.getText());
+			text1.setText(gist.getUser().getLogin());
+			text2.setText(gist.getDescription());
 
 			return v;
 		}		

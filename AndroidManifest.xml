@@ -4,7 +4,8 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="7" />
+    <uses-sdk android:minSdkVersion="7"
+        android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 <!--     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
@@ -39,6 +40,8 @@
         </activity>
         <activity android:name=".ListViewActivityB" >
         </activity>
+        <activity android:name=".ListViewActivityC" >
+        </activity>
         <activity android:name=".UrlConnectionActivityA" >
         </activity>
         <activity android:name=".HttpRequestActivityA" >
@@ -64,6 +67,8 @@
         <activity android:name=".PermissionActivityA" >
         </activity>
         <activity android:name=".ResourcesActivity" >
+        </activity>
+        <activity android:name=".HandlerTimerActivity">
         </activity>
     </application>
 

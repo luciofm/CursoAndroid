@@ -24,13 +24,15 @@ public class CursoActivity extends Activity {
 			"IntentPhotoActivity",
 			"ListViewActivityA",
 			"ListViewActivityB",
+			"ListViewActivityC",
 			"UrlConnectionActivityA",
 			"HttpRequestActivityA",
 			"BackgroundActivityA",
 			"BackgroundActivityB",
 			"BackgroundActivityC",
 			"WebServiceJsonActivityA",
-			"WebServiceJsonActivityB"
+			"WebServiceJsonActivityB",
+			"HandlerTimerActivity"
 	};
 
 	@Override
