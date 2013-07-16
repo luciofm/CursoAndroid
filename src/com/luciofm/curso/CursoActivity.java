@@ -30,6 +30,7 @@ public class CursoActivity extends Activity {
 			"BackgroundActivityA",
 			"BackgroundActivityB",
 			"BackgroundActivityC",
+			"BackgroundActivityD",
 			"WebServiceJsonActivityA",
 			"WebServiceJsonActivityB",
 			"HandlerTimerActivity"
