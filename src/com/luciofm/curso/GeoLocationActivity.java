@@ -28,6 +28,8 @@ public class GeoLocationActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		/* Começa a adicinar as views de baixo para cima, para a mais nova ser sempre a primeira */
+		getListView().setStackFromBottom(true);
 		mAdapter = new LocationAdapter(this, new ArrayList<Location>());
 		setListAdapter(mAdapter);
 
