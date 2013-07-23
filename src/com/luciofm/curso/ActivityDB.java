@@ -51,7 +51,6 @@ public class ActivityDB extends Activity implements OnItemClickListener, OnItemL
 		helper = new DBOpenHelper(this, "database", null, 1);
 		db = helper.getWritableDatabase();
 		atualizaLista();
-
 	}
 
 	OnClickListener clickListener = new OnClickListener() {

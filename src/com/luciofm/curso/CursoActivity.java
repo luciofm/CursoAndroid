@@ -36,6 +36,7 @@ public class CursoActivity extends Activity {
 			"HandlerTimerActivity",
 			"GeoLocationActivity",
 			"ActivityDB",
+			"ActivitySharedPreferences",
 			"ActivityProvider"
 	};
 

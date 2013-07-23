@@ -21,7 +21,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.luciofm.curso.data.provider.CursoContent;
 import com.luciofm.curso.data.provider.CursoContent.CursoPessoas;
 import com.luciofm.curso.data.provider.CursoContent.CursoPessoas.Columns;
 

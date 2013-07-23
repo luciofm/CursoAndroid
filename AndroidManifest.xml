@@ -77,6 +77,8 @@
         </activity>
         <activity android:name=".ActivityDB">
         </activity>
+        <activity android:name=".ActivitySharedPreferences">
+        </activity>
 		<activity android:name=".ActivityProvider">
         </activity>
         <provider android:name=".data.provider.CursoProvider"
