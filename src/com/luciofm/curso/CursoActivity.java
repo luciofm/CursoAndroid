@@ -34,7 +34,9 @@ public class CursoActivity extends Activity {
 			"WebServiceJsonActivityA",
 			"WebServiceJsonActivityB",
 			"HandlerTimerActivity",
-			"GeoLocationActivity"
+			"GeoLocationActivity",
+			"ActivityDB",
+			"ActivityProvider"
 	};
 
 	@Override

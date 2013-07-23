@@ -75,6 +75,12 @@
         </activity>
         <activity android:name=".GeoLocationActivity">
         </activity>
+        <activity android:name=".ActivityDB">
+        </activity>
+		<activity android:name=".ActivityProvider">
+        </activity>
+        <provider android:name=".data.provider.CursoProvider"
+            android:authorities="com.luciofm.curso.provider.CursoProvider"></provider>
     </application>
 
 </manifest>
