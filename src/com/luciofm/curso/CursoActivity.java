@@ -1,6 +1,7 @@
 package com.luciofm.curso;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -37,7 +38,8 @@ public class CursoActivity extends Activity {
 			"GeoLocationActivity",
 			"ActivityDB",
 			"ActivitySharedPreferences",
-			"ActivityProvider"
+			"ActivityProvider",
+			"ActivityActionBar"
 	};
 
 	@Override
@@ -45,6 +47,9 @@ public class CursoActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
+		Context context = this;
+		context.getResources().getString(R.string.greeting_user);
+		
 		LinearLayout container = (LinearLayout) findViewById(R.id.buttons_container);
 		for (final String activity : activities) {
 			Button btn = new Button(this);

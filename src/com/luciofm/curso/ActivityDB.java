@@ -1,7 +1,5 @@
 package com.luciofm.curso;
 
-import com.luciofm.curso.data.DBOpenHelper;
-
 import android.app.Activity;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -18,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+
+import com.luciofm.curso.data.DBOpenHelper;
 
 public class ActivityDB extends Activity implements OnItemClickListener, OnItemLongClickListener {
 
@@ -43,6 +43,7 @@ public class ActivityDB extends Activity implements OnItemClickListener, OnItemL
 		edit2 = (EditText) findViewById(R.id.editText2);
 		button = (Button) findViewById(R.id.button1);
 		list = (ListView) findViewById(R.id.listView1);
+
 		list.setOnItemClickListener(this);
 		list.setOnItemLongClickListener(this);
 

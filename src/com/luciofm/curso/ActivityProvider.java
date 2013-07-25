@@ -36,6 +36,8 @@ public class ActivityProvider extends FragmentActivity implements OnItemClickLis
 	ListView list;
 
 	SimpleCursorAdapter mAdapter;
+	
+	static final int DB_PESSOAS = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class ActivityProvider extends FragmentActivity implements OnItemClickLis
 				android.R.layout.simple_list_item_2, null, colunas, ids, 0);
 		list.setAdapter(mAdapter);
 
-		getSupportLoaderManager().initLoader(0, null, this);
+		getSupportLoaderManager().initLoader(DB_PESSOAS, null, this);
 	}
 
 	OnClickListener clickListener = new OnClickListener() {
@@ -121,7 +123,12 @@ public class ActivityProvider extends FragmentActivity implements OnItemClickLis
 
 	@Override
 	public Loader<Cursor> onCreateLoader(int loader, Bundle args) {
-		return new CursorLoader(this, CursoPessoas.CONTENT_URI, CursoPessoas.PROJECTION, null, null, null);
+		switch (loader) {
+		case DB_PESSOAS:
+			return new CursorLoader(this, CursoPessoas.CONTENT_URI, CursoPessoas.PROJECTION, null, null, null);	
+		default:
+			return null;
+		}
 	}
 
 	@Override

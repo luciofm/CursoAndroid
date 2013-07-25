@@ -4,12 +4,16 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="7"
+    <uses-sdk
+        android:minSdkVersion="7"
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <permission android:name="com.luciofm.curso.permission.ContentProvider" >
+    </permission>
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -53,7 +57,7 @@
         </activity>
         <activity android:name=".BackgroundActivityC" >
         </activity>
-		<activity android:name=".BackgroundActivityD" >
+        <activity android:name=".BackgroundActivityD" >
         </activity>
         <activity android:name=".WebServiceJsonActivityA" >
         </activity>
@@ -71,18 +75,50 @@
         </activity>
         <activity android:name=".ResourcesActivity" >
         </activity>
-        <activity android:name=".HandlerTimerActivity">
+        <activity android:name=".HandlerTimerActivity" >
         </activity>
-        <activity android:name=".GeoLocationActivity">
+        <activity android:name=".GeoLocationActivity" >
         </activity>
-        <activity android:name=".ActivityDB">
+        <activity android:name=".ActivityDB" >
         </activity>
-        <activity android:name=".ActivitySharedPreferences">
+        <activity android:name=".ActivitySharedPreferences" >
         </activity>
-		<activity android:name=".ActivityProvider">
+        <activity android:name=".ActivityProvider" >
         </activity>
-        <provider android:name=".data.provider.CursoProvider"
-            android:authorities="com.luciofm.curso.provider.CursoProvider"></provider>
+
+        <provider
+            android:name=".data.provider.CursoProvider"
+            android:authorities="com.luciofm.curso.provider.CursoProvider"
+            android:exported="true" >
+        </provider>
+
+        <activity
+            android:name="ActivityActionBar"
+            android:theme="@style/Sherlock.__Theme.DarkActionBar" >
+        </activity>
+        <activity
+            android:name="ActivitySend"
+            android:theme="@style/SendTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity android:name="ActivityView" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="largemind.mobi"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
